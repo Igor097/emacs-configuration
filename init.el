@@ -31,3 +31,20 @@
 (use-package try
   :ensure t)
 
+(use-package which-key
+  :ensure t
+  :config 
+  (progn
+    (which-key-setup-side-window-right-bottom)
+    (which-key-mode)))
+
+(use-package auto-complete
+  :ensure t
+  :init
+  (progn
+    (ac-config-default)
+    (global-auto-complete-mode t)))
+
+(use-package neotree
+  :ensure t)
+
