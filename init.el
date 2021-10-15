@@ -18,6 +18,9 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 
+(add-to-list 'default-frame-alist
+             '(font . "Monaco-12"))
+
 ;; Melpa - repository
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
@@ -47,4 +50,22 @@
 
 (use-package neotree
   :ensure t)
+
+;; Setup theme default
+;; (load-theme 'misterioso)
+
+(use-package dakrone-theme
+  :ensure t
+  :config (load-theme 'dakrone t))
+
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode t))
+
+;; Shortcuts
+(global-set-key (kbd "C-<tab>") 'other-window)
+(global-set-key (kbd "M-<down>") 'enlarge-window)
+(global-set-key (kbd "M-<up>") 'shirink-window)
+(global-set-key (kbd "M-<left>") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-<right>") 'shirink-window-horizontally)
 
